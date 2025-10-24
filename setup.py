@@ -1,11 +1,11 @@
-""" eea.fise.policy Installer
-"""
+"""eea.fise.policy Installer"""
+
 import os
 from os.path import join
 from setuptools import setup, find_packages
 
-NAME = 'eea.fise.policy'
-PATH = NAME.split('.') + ['version.txt']
+NAME = "eea.fise.policy"
+PATH = NAME.split(".") + ["version.txt"]
 VERSION = open(join(*PATH)).read().strip()
 
 setup(
@@ -14,8 +14,9 @@ setup(
     description="EEA Fise Plone backend policy",
     long_description_content_type="text/x-rst",
     long_description=(
-        open("README.rst").read() + "\n" +
-        open(os.path.join("docs", "HISTORY.txt")).read()
+        open("README.rst").read()
+        + "\n"
+        + open(os.path.join("docs", "HISTORY.txt")).read()
     ),
     classifiers=[
         "Environment :: Web Environment",
@@ -29,27 +30,27 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
     ],
-    keywords='EEA Add-ons Plone Zope',
-    author='European Environment Agency: IDM2 A-Team',
-    author_email='eea-edw-a-team-alerts@googlegroups.com',
-    url='https://github.com/eea/eea.fise.policy',
-    license='GPL version 2',
-    packages=find_packages(exclude=['ez_setup']),
-    namespace_packages=['eea', 'eea.fise'],
+    keywords="EEA Add-ons Plone Zope",
+    author="European Environment Agency: IDM2 A-Team",
+    author_email="eea-edw-a-team-alerts@googlegroups.com",
+    url="https://github.com/eea/eea.fise.policy",
+    license="GPL version 2",
+    packages=find_packages(exclude=["ez_setup"]),
+    namespace_packages=["eea", "eea.fise"],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'setuptools',
+        "setuptools",
         # -*- Extra requirements: -*-
-        'eea.kitkat',
-        'eea.dexterity.indicators',
-        'eea.dexterity.themes',
-        'eea.progress.workflow',
+        "eea.kitkat",
+        "eea.dexterity.indicators",
+        "eea.dexterity.themes",
+        "eea.progress.workflow",
     ],
     extras_require={
-        'test': [
+        "test": [
             "plone.app.contenttypes",
-            'plone.app.testing',
+            "plone.app.testing",
             "plone.testing",
             "zope.testrunner",
         ],
@@ -57,5 +58,5 @@ setup(
     entry_points="""
     [z3c.autoinclude.plugin]
     target = plone
-    """
+    """,
 )
